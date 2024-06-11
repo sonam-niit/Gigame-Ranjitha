@@ -1,0 +1,37 @@
+<h1>My First Angular App</h1>
+<h3>Welcome {{name}}</h3>
+<img [src]="imageUrl" [height]="height" [width]="width" /><br/>
+<button (click)="onClick()">Click Me</button>
+<p *ngIf="flag">This is my Pragraph</p>
+<input type="text" placeholder="Enter Name" [(ngModel)]="name" />
+<ul>
+    <li *ngFor="let u of users">
+        {{u.id}}, {{u.name}}, {{u.email}}, {{u.country}}
+    </li>
+</ul>
+<!--Switch Demo-->
+<div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'map'">
+      <p>Map View</p>
+    </div>
+    <div *ngSwitchCase="'list'">
+      <p>List View</p>
+    </div>
+    <div *ngSwitchDefault>
+      <p>Default View</p>
+    </div>
+  </div>
+  
+  <button (click)="viewMode='map'">Map View</button>
+  <button (click)="viewMode='list'">List View</button>
+  <button (click)="viewMode='other'">Other View</button>
+  <!-- NgStyle Demo-->
+  <div [ngStyle]="getStyles()">
+    This is a dynamically styled div!
+  </div>
+  
+  <button (click)="toggleHighlight()">Toggle Highlight</button>
+  <button (click)="toggleBold()">Toggle Bold</button>
+  <button (click)="increaseFontSize()">Increase Font Size</button>
+  <button (click)="decreaseFontSize()">Decrease Font Size</button>
+  
