@@ -50,6 +50,22 @@ export class ExampleComponent implements OnInit {
       'font-size': `${this.fontSize}px`
     };
   }
+
+  //for NgClass Demo
+  isPrimary:boolean=true;
+
+  isSpecial:boolean=true;
+  canSave:boolean=false;
+  toggleClass(){
+    this.isPrimary=!this.isPrimary;
+  }
+  getButtonClass(){
+    return{
+      'btn':true,
+      'btn-primary':this.isPrimary,
+      'btn-secondary':!this.isPrimary
+    }
+  }
   constructor() { }
 
   ngOnInit(): void {

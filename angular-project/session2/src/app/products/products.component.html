@@ -1,0 +1,8 @@
+<h3>Products Page</h3>
+<div *ngFor="let product of products">
+    <h4>{{product.name}}</h4>
+    <p>Category: {{product.category}}
+        <a routerLink="details/{{product.id}}">view</a>
+    </p>
+    <hr>
+</div>

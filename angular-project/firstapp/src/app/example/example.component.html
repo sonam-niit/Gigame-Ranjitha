@@ -34,4 +34,15 @@
   <button (click)="toggleBold()">Toggle Bold</button>
   <button (click)="increaseFontSize()">Increase Font Size</button>
   <button (click)="decreaseFontSize()">Decrease Font Size</button>
+
+  <div [ngClass]="{'special':isSpecial,'saveable':canSave}">
+    This is My ngClass Demo Div
+  </div>
+
+  <button (click)="isSpecial=!isSpecial" class="btn btn-primary">Toogle Special</button>
+  <button (click)="canSave=!canSave" class="btn btn-secondary">Toogle SaveAble</button>
+
+  <button [ngClass]="getButtonClass()" (click)="toggleClass()">
+    Click Me!
+  </button>
   
