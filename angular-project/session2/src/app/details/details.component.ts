@@ -9,7 +9,7 @@ import productsData from '../../assets/products.json';
 })
 export class DetailsComponent implements OnInit {
 
-  product:any=null ;
+  product:any=null;
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {

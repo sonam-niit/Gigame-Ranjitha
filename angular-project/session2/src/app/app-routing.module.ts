@@ -5,14 +5,29 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { DetailsComponent } from './details/details.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { ChildAComponent } from './dashboard/child-a/child-a.component';
+import { ChildBComponent } from './dashboard/child-b/child-b.component';
+import { AuthGuard } from './auth.guard';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'products',component:ProductsComponent},
-  {path:'products/details/:id',component:DetailsComponent}
+  {path:'lifecycle',component:LifecycleComponent},
+  {path:'products',component:ProductsComponent,canActivate:[AuthGuard]},
+  {path:'products/details/:id',component:DetailsComponent,
+    canActivate:[AuthGuard]
+  },
+  {path:'dashboard',component:DashboardComponent,children:[
+    {path:'',redirectTo:'child-a',pathMatch:'full'},
+    {path:'child-a',component:ChildAComponent},
+    {path:'child-b',component:ChildBComponent}
+  ],canActivate:[AuthGuard]},
+  { path: 'customer', loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule) }
+  //Lazy loading
 ];
 
 @NgModule({

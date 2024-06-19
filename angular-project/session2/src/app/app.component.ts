@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'session2';
+  parenData:string="Hello from parent component"
 }
