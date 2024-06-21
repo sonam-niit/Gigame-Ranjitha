@@ -12,6 +12,10 @@ import { ChildAComponent } from './dashboard/child-a/child-a.component';
 import { ChildBComponent } from './dashboard/child-b/child-b.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { EventsComponent } from './session4/events/events.component';
+import { LoginformComponent } from './session4/loginform/loginform.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterformComponent } from './session4/registerform/registerform.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +29,14 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
     ChildBComponent,
     DashboardComponent,
     LifecycleComponent,
+    EventsComponent,
+    LoginformComponent,
+    RegisterformComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,12 @@
+<h3>Login Form</h3>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" ngModel required name="name"/>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" ngModel required name="email"/>
+    </div>
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
