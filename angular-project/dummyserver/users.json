@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Sonam",
+      "email": "sonam@gmail.com",
+      "country": "India"
+    }
+  ]
+}

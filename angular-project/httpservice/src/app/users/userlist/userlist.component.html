@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Operations</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of users">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.email}}</td>
+            <td>{{u.country}}</td>
+            <td><a routerLink="/details/{{u.id}}">View</a></td>
+            <td><button (click)="delete(u.id)">delete</button></td>
+        </tr>
+    </tbody>
+</table>
