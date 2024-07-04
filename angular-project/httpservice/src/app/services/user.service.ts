@@ -14,8 +14,11 @@ export class UserService {
   getAllUsers():Observable<User[]>{
     return this.http.get<User[]>(this.baseUrl);
   }
-  addUser(){
-
+  addUser(user:User):Observable<User>{
+    return this.http.post<User>(this.baseUrl,user)
+  }
+  updateUser(id:number,user:User):Observable<User>{
+    return this.http.put<User>(`${this.baseUrl}/${id}`,user)
   }
   getUserById(id:number):Observable<User>{
     return this.http.get<User>(this.baseUrl+"/"+id);
