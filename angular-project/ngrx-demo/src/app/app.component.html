@@ -1,0 +1,11 @@
+<div>
+  <h1>Book List</h1>
+  <ul>
+    <li *ngFor="let book of books | async">
+      {{book.title}} by {{book.author}}
+      <button (click)="removeBook(book.id)">Remove</button>
+    </li>
+  </ul>
+  <hr>
+  <app-add></app-add>
+</div>
